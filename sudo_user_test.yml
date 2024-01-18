@@ -1,19 +1,24 @@
 ---
 - hosts: server
   remote_user: admin
+  become: true
+  become_method: sudo
+  become_user: admin
   gather_facts: yes
   connection: ssh
+  vars:
+    password: mbank2020
   tasks:
       - name: create dir
         shell: |
                 cd /home
                 mkdir nomuk
-                
+
       - name: ensure
         file:
           path: /home/nomuk
           state: directory
-
+          
       - name: create file
         shell: |
                 cd /home/nomuk
