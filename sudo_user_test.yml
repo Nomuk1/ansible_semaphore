@@ -1,5 +1,5 @@
 ---
-- hosts: kubernetes_jijig_master
+- hosts: test
   remote_user: admin
   become: true
   become_method: sudo
