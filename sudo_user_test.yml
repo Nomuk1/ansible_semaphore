@@ -10,14 +10,4 @@
       - name: create dir
         shell: |
                 cd /home
-                mkdir nomuk
-
-      - name: ensure
-        file:
-          path: /home/nomuk
-          state: directory
-          
-      - name: create file
-        shell: |
-                cd /home/nomuk
-                echo "Hello, this is some text." > filename.txt
+                mkdir /home/nomuk
