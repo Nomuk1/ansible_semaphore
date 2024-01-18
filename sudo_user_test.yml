@@ -1,13 +1,11 @@
 ---
 - hosts: server
   remote_user: root
-  become: true
+  become: yes
   become_method: sudo
   become_user: root
   gather_facts: yes
   connection: ssh
-  vars:
-    password: mbank2020
   tasks:
       - name: create dir
         shell: |
