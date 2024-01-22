@@ -9,7 +9,17 @@
   vars:
     ansible_become_pass: "mbank2022"
   tasks:
+
       - name: create dir
         shell: |
-                cd /home
-                mkdir nomuk
+                mkdir /home/nomuk
+
+      - name: ensure
+        file:
+          path: /home/nomuk
+          state: directory
+
+      - name: create file
+        shell: |
+                cd /home/nomuk
+                echo "Hello, I am Ansible the automation, this is some text." > filename.txt
