@@ -12,6 +12,7 @@
 
       - name: create dir
         shell: |
+                cd /home 
                 mkdir /home/nomuk
 
       - name: ensure
