@@ -1,0 +1,26 @@
+---
+- hosts: server
+  remote_user: admin
+  become: true
+  become_method: sudo
+  become_user: root
+  gather_facts: yes
+  connection: ssh
+  vars:
+    ansible_become_pass: "mbank2022"
+  tasks:
+
+      - name: create dir
+        shell: |
+                cd /home
+                mkdir nomuk
+
+      - name: ensure
+        file:
+          path: /home/nomuk
+          state: directory
+
+      - name: create file
+        shell: |
+                cd /home/nomuk
+                echo "Hello, I am Ansible the automation, this is some text." > filename.txt
