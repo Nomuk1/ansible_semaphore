@@ -2,9 +2,6 @@
 - hosts: server
   remote_user: admin
   become: yes
-  become_method: sudo
-  become_user: admin
-  gather_facts: yes
   connection: ssh
   tasks:
       - name: create dir
