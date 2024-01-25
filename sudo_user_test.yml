@@ -1,9 +1,9 @@
 ---
 - hosts: server
-  remote_user: root
+  remote_user: admin
   become: yes
   become_method: sudo
-  become_user: root
+  become_user: admin
   gather_facts: yes
   connection: ssh
   tasks:
